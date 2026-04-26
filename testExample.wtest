@@ -17,3 +17,8 @@ describe "Victoria D. Porte" {
         assert.equals(8120, victorioDPorte.presupuestoTotal())
     }
 }
+describe "Deportistas" {
+    test "Delpo tiene su presupuesto mas el presupuesto de la disciplina" {
+        assert.equals(695, delpo.presupuestoAtleta())
+    }
+}

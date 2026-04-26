@@ -2,19 +2,12 @@ import elementosDisciplinas.*
 
 object tenis {
     var hinchas = hinchasIniciales
-    var canchas = 5
-    const hinchasIniciales = 0 
+    const hinchasIniciales = 5
 
-    method abirEstadios() {
-        hinchas += 300 * canchas
+    method agregarButacasAlEstadio() {
+        hinchas += 300
     }
-    method cerrarEstadios() {
-        hinchas = hinchasIniciales
-    }
-    method construirNuevaCancha() {
-        canchas += 1
-    }
-    method presupuestoPorCancha() = canchas * (3 * hinchas)
+    method presupuestoPorCancha() = 3 * hinchas
     method presupuestoDisciplina() = 200 + self.presupuestoPorCancha()
     method elementoDeLaDisciplina() = raqueta 
 }

@@ -6,8 +6,7 @@ object victorioDPorte {
     var altura = 158
     var deporteQuePractica = judo
     var elementoDeLaDisciplinaQuePractica = judo.elementoDeLaDisciplina()
-    var entrenadores = 0
-    var costoPorEntrenador = 0 
+    var presupuestoTotal = 0
     method edad() = 21 
 
     method cambiarDeporteQuePractica(nuevoDeporte) {
@@ -19,15 +18,10 @@ object victorioDPorte {
 
     method parecerseAUnDeportista(unDeportista) {
         altura = unDeportista.altura()
-        entrenadores = unDeportista.entrenadores()
-        costoPorEntrenador = unDeportista.costoPorEntrenador()
+        presupuestoTotal = unDeportista.presupuestoAtleta()
         self.cambiarElementoDeLaDisciplina(unDeportista.elementoDeLaDisciplinaQuePractica())
     }
-    method presupuestoDeLaDisciplina() = deporteQuePractica.presupuestoDisciplina()
-    method presupuestoDelAtleta() = entrenadores * costoPorEntrenador
-    method presupuestoTotal() = self.presupuestoDeLaDisciplina() + self.presupuestoDelAtleta()
+    method presupuestoTotal() = presupuestoTotal
     method deporteQuePractica() = deporteQuePractica
-    method entrenadores() = entrenadores
-    method costoPorEntrenador() = costoPorEntrenador
     method altura() = altura 
 }
