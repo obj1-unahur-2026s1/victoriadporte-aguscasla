@@ -1,3 +1,5 @@
+import elementosDisciplinas.*
+
 object tenis {
     var hinchas = hinchasIniciales
     var canchas = 5
@@ -9,16 +11,21 @@ object tenis {
     method cerrarEstadios() {
         hinchas = hinchasIniciales
     }
+    method construirNuevaCancha() {
+        canchas += 1
+    }
     method presupuestoPorCancha() = canchas * (3 * hinchas)
     method presupuestoDisciplina() = 200 + self.presupuestoPorCancha()
+    method elementoDeLaDisciplina() = raqueta 
 }
 
 object judo {
-    var medallasGanadasDeJudo = 3
+    var cantidadDeMedallasGanadasDeJudo = 3
 
-    method sumarUnaNuevo() {
-      
+    method sumarUnaNuevaMedallaDeJUdo(medallasNuevas) {
+        cantidadDeMedallasGanadasDeJudo += medallasNuevas
     }
 
-    method presupuestoDisciplina() = 160 * self.medallasGanadasDeJudo()
+    method elementoDeLaDisciplina() = trajeDeJudo
+    method presupuestoDisciplina() = 160 * cantidadDeMedallasGanadasDeJudo
 }

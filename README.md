@@ -6,10 +6,6 @@
 Para ello tenemos a una tal Victoria D. Porte, que es nuestra carta secreta.*
 
 
-Se requiere saber el presupuesto que esta atleta necesita para encarar los juegos olímpicos.  
-De victoria se sabe su edad, su altura (en cm), la disciplina que practica y un elemento indispensable para su realización.
-Su presupuesto sale de la suma entre el presupuesto propio, más el presupuesto base que demanda la disciplina que practica.
-
 El presupuesto base de las disciplinas existentes es:
 - En tenis (canchas, iluminación, pelotas, etc:.), cuesta $200 más $3 por cada hincha de tenis que haya, inicialmente 5 hinchas. 
 - El Judo (doboks, gimnasios, etc.), cuesta $160 multiplicado por la cantidad de medallas ganadas en la historia del Judo, que actualmente son 3. 

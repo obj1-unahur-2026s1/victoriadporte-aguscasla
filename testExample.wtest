@@ -1,0 +1,19 @@
+import victoriaDPorte.*
+import deportistas.*
+import disciplinas.*
+import elementosDisciplinas.*
+
+describe "Victoria D. Porte" {
+    test "La altura de Victoria es igual a la altura de Delpo" {
+        victorioDPorte.parecerseAUnDeportista(delpo)
+        assert.equals(210, victorioDPorte.altura())
+    }
+    test "El deporte que practica es igual al de Pareto" {
+        victorioDPorte.parecerseAUnDeportista(pareto)
+        assert.equals(judo, victorioDPorte.deporteQuePractica())
+    }
+    test "El presupuesto total de Victoria es ... luego de parecerse a Pareto" {
+        victorioDPorte.parecerseAUnDeportista(pareto)
+        assert.equals(8120, victorioDPorte.presupuestoTotal())
+    }
+}
