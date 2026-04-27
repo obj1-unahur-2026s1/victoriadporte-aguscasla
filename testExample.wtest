@@ -2,23 +2,45 @@ import victoriaDPorte.*
 import deportistas.*
 import disciplinas.*
 import elementosDisciplinas.*
+import comiteOlimpico.comiteOlimpico
+
 
 describe "Victoria D. Porte" {
-    test "La altura de Victoria es igual a la altura de Delpo" {
-        victorioDPorte.parecerseAUnDeportista(delpo)
+    
+    test "Victoria quiere pareceserce a Delpo, entonces crece hasta los 210 cm" {
+        victorioDPorte.parecerseA(delpo)
         assert.equals(210, victorioDPorte.altura())
     }
-    test "El deporte que practica es igual al de Pareto" {
-        victorioDPorte.parecerseAUnDeportista(pareto)
-        assert.equals(judo, victorioDPorte.deporteQuePractica())
+    test "Victoria luego de parecerse Delpo ahora practica tenis" {
+        victorioDPorte.parecerseA(delpo)
+        assert.equals(tenis, victorioDPorte.disciplinaQuePractica())
     }
-    test "El presupuesto total de Victoria es ... luego de parecerse a Pareto" {
-        victorioDPorte.parecerseAUnDeportista(pareto)
-        assert.equals(8120, victorioDPorte.presupuestoTotal())
+    test "Victoria en principio tiene un presupuesto inicial de 7900" {
+        assert.equals(8460, victorioDPorte.presupuestoAtleta())
+    }
+    test "Ahora victoria quiere parecerse a Pareto y su presupuesto ahora es de 8100" {
+        victorioDPorte.parecerseA(pareto)
+        assert.equals(8100, victorioDPorte.presupuestoAtleta())
+    }
+    test "Victoria ya no quiere parecerse a pareto, ahora quiere ser igual a delpo pero con una cancha de tenis mas grande, asi su presupuesto sube a " {
+        tenis.agregarButacasAlEstadio()
+        victorioDPorte.parecerseA(delpo)
+        assert.equals(4275, victorioDPorte.presupuestoAtleta())
     }
 }
-describe "Deportistas" {
-    test "Delpo tiene su presupuesto mas el presupuesto de la disciplina" {
-        assert.equals(695, delpo.presupuestoAtleta())
+
+describe "Delpo" {
+    test "Delpo tiene un presupuesto como atleta de 3160" {
+        assert.equals(3160, delpo.presupuestoAtleta())
+    }
+}
+
+describe "Tenis" {
+    test "El presupuesto de la disciplina inicial es de 215" {
+        assert.equals(215, tenis.presupuestoDisciplina())
+    }
+    test "Luego de agregar butacas al estadio, el presupuesto aumenta a 1115" {
+        tenis.agregarButacasAlEstadio()
+        assert.equals(1115, tenis.presupuestoDisciplina())
     }
 }

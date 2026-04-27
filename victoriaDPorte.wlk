@@ -1,27 +1,23 @@
 import disciplinas.*
 import elementosDisciplinas.*
-
+import comiteOlimpico.*
 
 object victorioDPorte {
+    method costoPorEntrenador() = comiteOlimpico.costoPorEntrenador()
+    method cantidadEntrenadores() = 2
     var altura = 158
-    var deporteQuePractica = judo
+    var disciplinaQuePractica = judo
     var elementoDeLaDisciplinaQuePractica = judo.elementoDeLaDisciplina()
-    var presupuestoTotal = 0
+    var presupuestoAtleta = self.costoPorEntrenador() * self.cantidadEntrenadores() + self.disciplinaQuePractica().elementoDeLaDisciplina().costoDelElemento(self)
     method edad() = 21 
 
-    method cambiarDeporteQuePractica(nuevoDeporte) {
-        deporteQuePractica = nuevoDeporte
-    }
-    method cambiarElementoDeLaDisciplina(nuevoElemento) {
-        elementoDeLaDisciplinaQuePractica = nuevoElemento
-    }
-
-    method parecerseAUnDeportista(unDeportista) {
+    method parecerseA(unDeportista) {
         altura = unDeportista.altura()
-        presupuestoTotal = unDeportista.presupuestoAtleta()
-        self.cambiarElementoDeLaDisciplina(unDeportista.elementoDeLaDisciplinaQuePractica())
+        presupuestoAtleta = unDeportista.presupuestoAtleta()
+        disciplinaQuePractica = unDeportista.disciplinaQuePractica()
+        elementoDeLaDisciplinaQuePractica = disciplinaQuePractica.elementoDeLaDisciplina()
     }
-    method presupuestoTotal() = presupuestoTotal
-    method deporteQuePractica() = deporteQuePractica
-    method altura() = altura 
+    method presupuestoAtleta() = presupuestoAtleta + disciplinaQuePractica.presupuestoDisciplina()
+    method altura() = altura
+    method disciplinaQuePractica() = disciplinaQuePractica 
 }
